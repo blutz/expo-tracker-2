@@ -4,8 +4,13 @@ const compareNumbers = (a, b) => a < b
 const addMinutes = (num) => `${num} min`
 
 async function getPredictions() {
-  const predictions = await
-    (await fetch('http://api.metro.net/agencies/lametro-rail/stops/80134/predictions/')).json()
+  try {
+    const predictions = await
+      (await fetch('http:://api.metro.net/agencies/lametro-rail/stops/80134/predictions/')).json()
+  } catch (e) {
+    window.alert("Couldn't load")
+    console.error(e)
+  }
   let ret = { sm: [], dtla: [] }
   predictions.items.forEach(item => {
     if(item.run_id === dtlaRoute) {
