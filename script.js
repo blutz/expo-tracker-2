@@ -5,8 +5,8 @@ const addMinutes = (num) => `${num} min`
 
 async function getPredictions() {
   try {
-    const predictions = await
-      (await fetch('http:://api.metro.net/agencies/lametro-rail/stops/80134/predictions/')).json()
+    var predictions = await
+      (await fetch('http://api.metro.net/agencies/lametro-rail/stops/80134/predictions/')).json()
   } catch (e) {
     window.alert("Couldn't load")
     console.error(e)
@@ -36,6 +36,9 @@ async function updatePage() {
 
   dtla.innerHTML = textPredictions.dtla.join(', ')
   sm.innerHTML = textPredictions.sm.join(', ')
+
+  const updated = document.getElementById('last-updated')
+  updated.innerHTML = (new Date()).toTimeString()
 }
 
 updatePage()
