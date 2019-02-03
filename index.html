@@ -2,9 +2,20 @@
 <html>
 <head>
   <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+  <link href='styles.css' rel='stylesheet' type='text/css' />
   <title>Expo line tracker</title>
 </head>
 <body>
-  Hello world
+  <div class='content'>
+    <div id='circle'></div>
+    <h1>Expo line tracker</h1>
+    <h2>Westwood/Rancho Park Station</h2>
+    <p><strong>Arrivals:</strong> <div id='arrivals'></div></p>
+    <p><strong>Departures:</strong> <div id='departures'></div></p>
+    <p><small>Last Updated <div id='last-updated'></div></small></p>
+  </div>
 </body>
 </html>
