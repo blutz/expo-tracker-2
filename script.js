@@ -42,3 +42,4 @@ async function updatePage() {
 }
 
 updatePage()
+window.setInterval(updatePage, 2000)
